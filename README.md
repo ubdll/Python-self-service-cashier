@@ -1,10 +1,11 @@
 # Python Self service cashier
 
-##Latar Belakang
+**Latar Belakang**
+
 Sebagai programmer yang dimintai bantuan oleh Andi. Ia membutuhkan program untuk membuat sistem self-service di supermarketnya.
 Dengan sistem ini customer bisa langsung memasukkan item yang dibeli, menghitung jumlah item yang dibeli, & harga item yang dibeli.
 
-##Feature Requirement / Objectives
+**Feature Requirement / Objectives**
 1. Customer membuat ID Transaksi
 2. Customer memasukkan nama item,jumlah item, dan harga barang.
   menggunakan method add_item(name,quantity,price)
@@ -24,9 +25,9 @@ Dengan sistem ini customer bisa langsung memasukkan item yang dibeli, menghitung
 flowchart TD;
   A[Start] --> B[Initialize Transaction];
   B --> C[Add Item to Transaction];
-  C --> D[Update Item Name];
-  D --> E[Update Item Quantity];
-  E --> F[Update Item Price];
+  C --> D[ingin update item?];
+  D --Ya--> E[Update Item Name/Quantity/Price];
+  C --Tidak--> F[Hapus Item/Reset Transaksi];
   F --> G[Delete Item from Transaction];
   G --> H[Reset Transaction];
   H --> I[Get Total];
