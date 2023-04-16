@@ -19,18 +19,24 @@ Dengan sistem ini customer bisa langsung memasukkan item yang dibeli, menghitung
 5. Customer bisa memvalidasi barang belanjaan dengan cara check_order
 6. customer bisa menghitung total harga belanjaan dengan method total_price. Harga total termasuk diskon yang ditentukan oleh supermarket.
 
-##flowchart
+**flowchart**
 
 ```mermaid
 flowchart TD;
-  A[Start] --> B[Initialize Transaction];
-  B --> C[Add Item to Transaction];
+  A[Start] --> B[Membuat ID Transaksi];
+  B --> C[Add Item menggunakan add_item];
   C --> D[ingin update item?];
-  D --Ya--> E[Update Item Name/Quantity/Price];
-  D --Tidak--> F[Hapus Item/Reset Transaksi];
-  F --> G[Delete Item from Transaction];
-  G --> H[Reset Transaction];
-  H --> I[Get Total];
-  I --> J[Check Order];
-  J --> K[End];
+  D --Ya--> E[Update Item Name/Quantity/Price menggunakan update_item];
+  E --> F(( ));
+  D --Tidak--> F;
+  F --> G[Ada Item yang harus dihapus?];
+  G --Yes--> H [Hapus item menggunakan delete_item atau hapus transaksi dengan reset_transaction];
+  G --No--> I (( ));
+  H --> I;
+  I --> J[Mengecek Order menggunakan check_order];
+  J --> K[Input Benar?];
+  K --No-->E;
+  K --Yes-->L[Menghitung total belanja menggunakan total_price];
+  L -->M[Tampilkan Harga termasuk diskon sesuai ketentuan supermarket]
+  M --> N[Selesai]
 
