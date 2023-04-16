@@ -27,7 +27,7 @@ flowchart TD;
   B --> C[Add Item to Transaction];
   C --> D[ingin update item?];
   D --Ya--> E[Update Item Name/Quantity/Price];
-  C --Tidak--> F[Hapus Item/Reset Transaksi];
+  D --Tidak--> F[Hapus Item/Reset Transaksi];
   F --> G[Delete Item from Transaction];
   G --> H[Reset Transaction];
   H --> I[Get Total];
